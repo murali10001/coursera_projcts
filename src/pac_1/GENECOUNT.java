@@ -6,7 +6,7 @@ public class GENECOUNT {
 	
 		try {
 			
-			File file = new File("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/gene.txt");
+			File file = new File("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/DEL.txt");
 			FileReader sequ = new FileReader(file);
 			BufferedReader geneCount = new BufferedReader(sequ);
 			String sequence = geneCount.readLine();
@@ -15,8 +15,7 @@ public class GENECOUNT {
 		        // Output the result
 		        System.out.println("Number of genes: " + count);
 		        
-		        System.out.println("----------------------------------------------------------");
-		        
+		        System.out.println("----------------------------------------------------------");		        
 		      //Display each gene  
 		      System.out.println("Gene are ");
 		      displaygene(sequence);
