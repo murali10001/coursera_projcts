@@ -59,9 +59,9 @@ public class CSV_temperature {
 	
 		
 		System.out.println("Number of days : "+path.length);
-		System.out.println("Maximum temperature : "+ max +"F on "+ dayM +" UTC");
-		System.out.println("Minimum temperature : "+ min +"F on "+ dayMI+" UTC" );
-		System.out.println("Average Temperature : "+tot_temp/i+"F"+"\n"+"Average Humidity : "+tot_hum/i+"%");
+		System.out.println("Maximum temperature : "+ max +"°F on "+ dayM +" UTC");
+		System.out.println("Minimum temperature : "+ min +"°F on "+ dayMI+" UTC" );
+		System.out.println("Average Temperature : "+tot_temp/i+"°F"+"\n"+"Average Humidity : "+tot_hum/i+"%");
 		
 	
 
