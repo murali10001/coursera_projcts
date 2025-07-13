@@ -10,7 +10,7 @@ public class CSV_temperature {
 	static String dayM,dayMI,dayH;
 	static int H_min=Integer.MAX_VALUE,i=1,tot_hum=0;
 	
-	public static void LargestTemp(String path)throws Exception {
+	public static void analyse_weather(String path)throws Exception {
 		CSVReader reader= new CSVReader(new FileReader(path));
 		String[] line;
 		
@@ -31,7 +31,6 @@ public class CSV_temperature {
 			if(temp<min) {
 				min=temp;
 				dayMI=x;
-				
 			}
 			if(humi<H_min) {
 				H_min=humi;
@@ -53,7 +52,7 @@ public class CSV_temperature {
 		
 		
 		for(int j=0;j<path.length;j++){
-			LargestTemp(path[j]);	
+			analyse_weather(path[j]);	
 			
 		}		
 	
