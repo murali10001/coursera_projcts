@@ -1,6 +1,7 @@
 package pac_1;
 
 import java.io.*;
+
 import com.opencsv.*;
 
 public class CSVproject {
@@ -8,7 +9,7 @@ public class CSVproject {
 	public static void main(String[] args) {
 		
 		try {
-			CSVReader reader= new CSVReader(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/exportdata.csv"));
+			CSVReader reader= new CSVReader(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/export_data/exportdata.csv"));
 			
 			String[] line;
 			reader.readNext(); //to skip header 
