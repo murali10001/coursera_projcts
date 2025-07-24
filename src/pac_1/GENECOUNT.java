@@ -30,30 +30,24 @@ public class GENECOUNT {
 	        int count = 0;
 	        int index = 0;
 	        
-	        //Loop through the sequence and search for "AAT" start and "GGT" end
-	        while (index < sequence.length()) {
-	            //Find the start codon "AAT"
-	            int start = sequence.indexOf("ATG", index);
-	            
-	            //If a start codon is found, find the stop codon "GGT" after it
+	       
+	        while (index < sequence.length()) {	          
+	            int start = sequence.indexOf("ATG", index);	          	            
 	            if (start != -1) {
-	                int end = sequence.indexOf("TAA", start + 3); // Search after the start codon
-	                
-	                //If a stop codon is found, it's a gene
+	                int end = sequence.indexOf("TAA", start + 3); 	           
 	                if (end != -1) {
-	                    count++;
-	                    //Move index to the position after the stop codon for next search
+	                    count++;	                   
 	                    index = end + 3;
 	                } else {
-	                    break; //If no stop codon is found, stop
+	                    break;
 	                }
 	            } else {
-	                break; //If no start codon is found, stop
+	                break; 
 	            }
-	        }
-	        
+	        }	        
 	        return count;
 	    }
+	    
 	    //display gene function
 	    public static void displaygene(String sequence) {
 	        int startindex=0;

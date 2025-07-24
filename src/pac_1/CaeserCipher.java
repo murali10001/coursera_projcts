@@ -1,43 +1,36 @@
 package pac_1;
 
+import java.io.FileReader;
 import java.util.Scanner;
 
-public class CaeserCipher {
 
-	public static void main(String[] args) {
-		Scanner scan=new Scanner(System.in);
-		System.out.print("enter a msg : ");
-		String message=scan.nextLine();
+public class CaeserCipher {
+	private String alphabet,Salphabet;
+	private String shiftedalphabet1,shiftedalphabet2,Shiftedsalphabet1,Shiftedsalphabet2;
+	
+	
+	public CaeserCipher(int key1,int key2){
 		
-		int key1=15;
-		int key2=0;
+		 alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		 shiftedalphabet1=alphabet.substring(key1)+alphabet.substring(0,key1);
+		 shiftedalphabet2=alphabet.substring(key2)+alphabet.substring(0,key2);
+		 
+		 Salphabet="abcdefghijklmnopqrstuvwxyz";
+		 Shiftedsalphabet1=Salphabet.substring(key1)+Salphabet.substring(0,key1);
+		 Shiftedsalphabet2=Salphabet.substring(key2)+Salphabet.substring(0,key2);
 		
-		String encrypt = encrypted_msg(message,key1,key2);
-		System.out.println( "Encrypted msg : "+encrypt);
-		
-		
-		String decrypt=encrypted_msg(encrypt,26-key1,26-key2);
-		System.out.println("decrypt msg "+decrypt);	
-		scan.close();
 	}
 	
-	public static String encrypted_msg(String input,int key1,int key2) {
+	
+	public  String encrypted_msg(String input) {
 		
 		StringBuilder encrypted=new StringBuilder(input);
-		String alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		String Lalphabet="abcdefghijklmnopqrstuvwxyz";
-		//shifted alphabet
-		String shiftedalphabet1=alphabet.substring(key1)+alphabet.substring(0,key1);
-		String shiftedLalphabet1=Lalphabet.substring(key1)+Lalphabet.substring(0,key1);
-		
-		String shiftedalphabet2=alphabet.substring(key2)+alphabet.substring(0,key2);
-		String shiftedLalphabet2=Lalphabet.substring(key2)+Lalphabet.substring(0,key2);
 		
 		for(int i=0;i<encrypted.length();i++) {
 			
 			char currChar=encrypted.charAt(i);
 			String shiftedalphabet=(i%2==0)?shiftedalphabet1:shiftedalphabet2;
-			String shiftedLalphabet=(i%2==0)?shiftedLalphabet1:shiftedLalphabet2;
+			String shiftedLalphabet=(i%2==0)?Shiftedsalphabet1:Shiftedsalphabet2;
 			
 			//HANDLE UPPER CASE
 			if(Character.isUpperCase(currChar)) {	
@@ -49,7 +42,7 @@ public class CaeserCipher {
 			}
 			//HANDLE LOWER CASE
 			else if(Character.isLowerCase(currChar)) {	
-				int index=Lalphabet.indexOf(currChar);
+				int index=Salphabet.indexOf(currChar);
 				if(index!= -1) {
 					char newChar=shiftedLalphabet.charAt(index);
 					encrypted.setCharAt(i, newChar);
@@ -57,7 +50,26 @@ public class CaeserCipher {
 			}
 		}
 		
-		
 		return encrypted.toString();
+
+	}
+	
+	public static void main(String[] args)throws Exception {
+
+		int key1=13;
+		int key2=17;		
+		
+		Scanner scan=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/message2.txt")); 
+		String line=null;
+		
+		CaeserCipher enc=new CaeserCipher(key1,key2);
+		System.out.println("\t	Encrypted message\n");
+		
+		while(scan.hasNextLine()) {
+			line=scan.nextLine();			
+			System.out.println(enc.encrypted_msg(line));			
+		}
+		
+		scan.close();
 	}
 }
