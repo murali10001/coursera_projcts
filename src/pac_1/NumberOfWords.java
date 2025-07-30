@@ -3,12 +3,14 @@ import java.io.*;
 import java.util.*;
 
 public class NumberOfWords {
-	private ArrayList<String> words;
-	private ArrayList<Integer> count;
+//	private ArrayList<String> words;
+//	private ArrayList<Integer> count;
+	private HashMap<String, Integer> record;
 	
 	public NumberOfWords() {
-		 words = new ArrayList<String>();
-		 count=new ArrayList<Integer>();
+//		 words = new ArrayList<String>();
+//		 count=new ArrayList<Integer>();
+		record=new HashMap<String, Integer>();
 	}
 	
 	public void FindUnique(String path)throws Exception {
@@ -23,38 +25,44 @@ public class NumberOfWords {
 				String[]  Splitwords =line.trim().split("\\s+");
 				for(String word:Splitwords) {
 					word=word.toLowerCase();
-					int index=words.indexOf(word);
-					if(index==-1){
-						words.add(word);
-						count.add(1);					
-					}
-					else {				
-						int val=count.get(index);
-						count.set(index, val+1);					
+					if(!record.containsKey(word)){
+						record.put(word, 1);
+					}else {
+						record.put(word, record.get(word)+1);
 					}
 					
 				}
 			}			
 		}
-		System.out.println("Number of unique words : "+words.size());
+		System.out.println("Number of unique words : "+record.size());
 		
 		
-		int max=count.get(0);
-		String maxW=null;;
-		for(int i=0;i<words.size();i++){
-			System.out.println(words.get(i)+" "+count.get(i));
-			if(count.get(i)>max){
-				max=count.get(i);
-				maxW=words.get(i);
+//		int max=count.get(0);
+//		String maxW=null;;
+//		for(int i=0;i<words.size();i++){
+//			System.out.println(words.get(i)+" "+count.get(i));
+//			if(count.get(i)>max){
+//				max=count.get(i);
+//				maxW=words.get(i);
+//			}
+//		}
+//		System.out.println("Max occur "+maxW+" number o times "+max);
+//		System.out.println(record);
+		Integer maxVal=0;
+		String maxKey=null;
+		for(Map.Entry<String,Integer> entry:record.entrySet()) {
+			if(entry.getValue()>maxVal) {
+				maxVal=entry.getValue();
+				maxKey=entry.getKey();
+				
 			}
 		}
-		System.out.println("Max occur "+maxW+" number o times "+max);
-	
+		System.out.println("Max word : "+maxKey +" No of time occur "+maxVal);
 		geneCount.close();
 	}
 	
 	public static void main(String[] args) throws Exception{
-		String path="C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/romeo.txt";
+		String path="C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/other/romeo.txt";
 		NumberOfWords f1= new NumberOfWords();
 		f1.FindUnique(path);
 

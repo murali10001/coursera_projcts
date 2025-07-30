@@ -104,8 +104,8 @@ public class baby_names {
 
 
 	public static void main(String[] args) {
-		String path1="C:\\Users\\Lenovo\\eclipse-workspace\\coursera_project\\src\\pac_1\\baby name data\\yob1900.csv";	
-		String path2="C:\\Users\\Lenovo\\eclipse-workspace\\coursera_project\\src\\pac_1\\baby name data\\yob1905.csv";	
+		String path1="C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/baby name data/yob1900.csv";	
+		String path2="C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/baby name data/yob1905.csv";	
 
 		try {
 			tot_birth(path1);
