@@ -6,7 +6,7 @@ public class GENECOUNT {
 	
 		try {
 			
-			File file = new File("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/other/gene.txt");
+			File file = new File("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/other/gene.txt");
 			FileReader sequ = new FileReader(file);
 			BufferedReader geneCount = new BufferedReader(sequ);
 			String sequence = geneCount.readLine();

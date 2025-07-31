@@ -97,7 +97,7 @@ public class LogAnalyzer {
 	public static void main(String[] args)throws Exception {
 
 		LogAnalyzer la=new LogAnalyzer();
-		la.readFile("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/logentry/weblog1_log.txt");
+		la.readFile("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/logentry/weblog1_log.txt");
 //		System.out.println(la.CountVisits());
 //		la.MaxOccur();
 //		System.out.println( la.DateCompare());

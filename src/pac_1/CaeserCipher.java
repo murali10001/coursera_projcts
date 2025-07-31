@@ -58,8 +58,8 @@ public class CaeserCipher {
 
 		int key1=13;
 		int key2=17;		
-		
-		Scanner scan=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/other/message2.txt")); 
+											   //C:\Users\manis\eclipse-workspace\coursera_project\src\pac_1\other\message2.txt
+		Scanner scan=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/other/message2.txt")); 
 		String line=null;
 		
 		CaeserCipher enc=new CaeserCipher(key1,key2);

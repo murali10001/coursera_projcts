@@ -19,49 +19,49 @@ public class GladLib {
 	public GladLib()throws Exception {
 		String line;
 		nameL=new ArrayList<String>();
-		Scanner scan1=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/name.txt"));
+		Scanner scan1=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/name.txt"));
 		while(scan1.hasNextLine()) {
 			line=scan1.nextLine();
 			nameL.add(line);
 		}scan1.close();
 		
 		countryL=new ArrayList<String>();
-		Scanner scan2=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/country.txt"));
+		Scanner scan2=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/country.txt"));
 		while(scan2.hasNextLine()) {
 			line=scan2.nextLine();
 			countryL.add(line);
 		}scan2.close();
 		
 		adjectiveL=new ArrayList<String>();
-		Scanner scan3=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/adjective.txt"));
+		Scanner scan3=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/adjective.txt"));
 		while(scan3.hasNextLine()) {
 			line=scan3.nextLine();
 			adjectiveL.add(line);
 		}scan3.close();
 		
 		animalL=new ArrayList<String>();
-		Scanner scan4=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/animal.txt"));
+		Scanner scan4=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/animal.txt"));
 		while(scan4.hasNextLine()) {
 			line=scan4.nextLine();
 			animalL.add(line);
 		}scan4.close();
 		
 		colourL=new ArrayList<String>();
-		Scanner scan5=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/color.txt"));
+		Scanner scan5=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/color.txt"));
 		while(scan5.hasNextLine()) {
 			line=scan5.nextLine();
 			colourL.add(line);
 		}scan5.close();
 		
 		fruitL=new ArrayList<String>();
-		Scanner scan6=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/fruit.txt"));
+		Scanner scan6=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/fruit.txt"));
 		while(scan6.hasNextLine()) {
 			line=scan6.nextLine();
 			fruitL.add(line);
 		}scan6.close();
 		
 		nounL=new ArrayList<String>();
-		Scanner scan7=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/noun.txt"));
+		Scanner scan7=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/noun.txt"));
 		while(scan7.hasNextLine()) {
 			line=scan7.nextLine();
 			nounL.add(line);
@@ -69,14 +69,14 @@ public class GladLib {
 		
 		
 		verbL=new ArrayList<String>();
-		Scanner scan8=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/verb.txt"));
+		Scanner scan8=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/verb.txt"));
 		while(scan8.hasNextLine()) {
 			line=scan8.nextLine();
 			verbL.add(line);
 		}scan8.close();
 				
 		timeframeL=new ArrayList<String>();
-		Scanner scan9=new Scanner(new FileReader("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/timeframe.txt"));
+		Scanner scan9=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/timeframe.txt"));
 		while(scan9.hasNextLine()) {
 			line=scan9.nextLine();
 			timeframeL.add(line);
@@ -144,7 +144,7 @@ public class GladLib {
 	
 	public static void main(String[] args) {
 		try {
-			File file=new File("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datalong/madtemplate2.txt");
+			File file=new File("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datalong/madtemplate2.txt");
 			FileReader fr=new FileReader(file);	
 			GladLib glib=new GladLib();
 			String line;

@@ -15,7 +15,7 @@ public class perimeter_of__a_shape {
 		try {		
 			
 			
-			File file=new File("C:/Users/Lenovo/eclipse-workspace/coursera_project/src/pac_1/datatest/datatest4.txt");
+			File file=new File("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/datatest/datatest4.txt");
 			Scanner scan =new Scanner(file);
 			
 			while(scan.hasNextLine()) {
