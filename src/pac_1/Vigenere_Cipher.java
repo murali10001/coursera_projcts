@@ -59,18 +59,18 @@ public class Vigenere_Cipher {
 
     
     public static void main(String[] args){
-    	try {																					
-    	
+    	try {																					 	
 	    	Scanner scan=new Scanner(new FileReader("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/other/message2.txt"));
 			String line=null;
-			String key = "Key";
+			String key = "Xeur";
 			Vigenere_Cipher enc=new Vigenere_Cipher();
-			System.out.println("\t	Encrypted message\n");		
+			System.out.println("\tEncrypted message\n");		
 			while(scan.hasNextLine()){
 				line=scan.nextLine();
 				System.out.println(enc.encrypt(line,key));
 			}		
 			scan.close();
+			
     	}catch(Exception e) {
     		System.out.println(e);
     	}

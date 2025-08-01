@@ -21,22 +21,7 @@ public class LogAnalyzer {
 	}
 
 	
-	public int DateCompare() {
-		SimpleDateFormat daymonF= new SimpleDateFormat("dd MMM",Locale.US);
-		String tar="30 sep";
-		int count=0;
-		for(logEntry le:records) {
-			Date d=le.getime();
-			String date=daymonF.format(d).toLowerCase();
-			if(date.equals(tar)) {
-				count++;
-			}	
-		}
-		return count;
-	}
-	
-	
-	public HashMap<String, Integer> CountVisits(){
+	public void CountVisits(){
 		
 		HashMap<String, Integer> counts =new HashMap<String, Integer>();
 		for(logEntry le:records) {
@@ -57,8 +42,9 @@ public class LogAnalyzer {
 				
 			}
 		}
-		System.out.println("Max word : "+maxKey +" No of time occur "+maxVal);
-		return counts;
+		System.out.println("The IP address with the most occurances in March is "+maxKey +" which appears "+maxVal);
+		System.out.println("The number of unique IP address in March is "+counts.size());
+		
 	}
 	
 	public void time_ip() {		
@@ -81,16 +67,39 @@ public class LogAnalyzer {
 		Integer maxVal=0;
 		String maxKey=null;
 			
+	
+		for(Map.Entry<String,Integer> entry:counts.entrySet()) {
+			if(entry.getValue()>maxVal ) {
+				maxVal=entry.getValue();
+				maxKey=entry.getKey();
+			}				
+		}				
+		
+		
+		System.out.println("On "+ tar+" the Most frequently occuring IP address is "+maxKey+" with "+maxVal+" occurrences" );	
+	}
+	
+	public void DateCompare() {
+		HashMap<String,Integer> counts=new HashMap<>();
+		
+		SimpleDateFormat daymonF= new SimpleDateFormat("dd MMM",Locale.US);
+		String tar="15 mar";
+		
+		String ip;
 		for(logEntry le:records) {
-				for(Map.Entry<String,Integer> entry:counts.entrySet()) {
-					if(entry.getValue()>maxVal ) {
-						maxVal=entry.getValue();
-						maxKey=entry.getKey();
-					}				
-				}				
-				
+			Date d=le.getime();
+			ip=le.getip();
+			String date=daymonF.format(d).toLowerCase();
+			
+			if(date.equals(tar)) {
+				if(!counts.containsKey(ip)){
+					counts.put(ip, 1);
+				}else {
+					counts.put(ip, counts.get(ip)+1);
+				}
+			}	
 		}
-		System.out.println("Max occur ip : "+maxKey+" times : "+maxVal );	
+		System.out.println("On "+tar+" there are "+counts.size()+" unique IP addresses");
 	}
 	
 	
@@ -98,10 +107,10 @@ public class LogAnalyzer {
 
 		LogAnalyzer la=new LogAnalyzer();
 		la.readFile("C:/Users/manis/eclipse-workspace/coursera_project/src/pac_1/logentry/weblog1_log.txt");
-//		System.out.println(la.CountVisits());
-//		la.MaxOccur();
-//		System.out.println( la.DateCompare());
+		la.CountVisits();
 		la.time_ip();
+		la.DateCompare();
+		
 		
 	}
 }
